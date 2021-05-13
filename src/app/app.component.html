@@ -3,11 +3,15 @@
 <div id="app">
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <a href="#" class="navbar-brand">Friend Zone</a>
-    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+    <ul class="navbar-nav mr-auto" routerLinkActive="active" *ngIf="!isLoggedIn">
       <li class="nav-item">
         <a href="/home" class="nav-link" routerLink="home">Home </a>
-      </li>
-      
+      </li>      
+    </ul>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active" *ngIf="isLoggedIn">
+        <li class="nav-item">
+          <a href="/profile" class="nav-link" routerLink="profile">User Home </a>
+        </li>      
     </ul>
 
     <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
@@ -18,15 +22,23 @@
         <a href="/login" class="nav-link" routerLink="login">Login</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0" *ngIf="isLoggedIn">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search Users" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="searchUsers()">Search</button>
-    </form>
 
     <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0" *ngIf="isLoggedIn">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search Users" aria-label="Search"
+      name="search" [(ngModel)]="searchText">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+       (click)="searchUsers()" >Search</button>
+    </form>
+    <!-- routerLink="searchUser" -->
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
       <li class="nav-item">
-        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+        <a href="/hobbies" class="nav-link" routerLink="hobbies">Hobbies</a>
       </li>
+      
       <li class="nav-item">
         <a href class="nav-link" (click)="logout()">LogOut</a>
       </li>

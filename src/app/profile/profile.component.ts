@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Form, FormBuilder, FormGroup, MinLengthValidator, Validators } from '@angular/forms';
+import { User } from '../models/user';
+import { AuthService } from '../services/auth.service';
 import { TokenStorageService } from '../services/token-storage.service';
 
 
@@ -8,15 +11,31 @@ import { TokenStorageService } from '../services/token-storage.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  currentUser: any;
+  currentUser: any = this.tokenStorageService.getUser();
+  
+  user: User = new User;
+  hobbies: string = this.user.hobbies;
 
-  constructor(private token: TokenStorageService) { }
+  constructor(
+    private tokenStorageService: TokenStorageService,
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
-    this.currentUser = this.token.getUser();
+    
+    this.retreiveHobbies();
   }
 
-  addHobbies(){
-    
+  retreiveHobbies(){
+    this.authService.getUser(this.currentUser.username).subscribe(
+      response => {
+        this.user = response;
+        console.log(this.user.hobbies);
+        
+      }
+    )
   }
+
 }
+
+

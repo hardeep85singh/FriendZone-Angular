@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 import { User } from '../models/user';
 
 
-const httOptions = {
+const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 
@@ -15,6 +15,7 @@ const httOptions = {
 export class AuthService {
   private userSubject: BehaviorSubject<User>;
   public user: Observable<User>;
+  // public searchUser: Observable<string>;
 
   constructor(
     private httpClient: HttpClient
@@ -26,12 +27,30 @@ export class AuthService {
   login(username: string, password: string){
     return this.httpClient.post<User>(`${environment.apiUrl}/login`, {
       username, password
-    }, httOptions);
+    }, httpOptions);
   }
 
   register(user: User){
     return this.httpClient.post<User>(`${environment.apiUrl}/signup`, 
     user,
-    httOptions);
+    httpOptions);
   }
+
+  addHobbies(username: string, hobbies: string){
+    return this.httpClient.post<User>(`${environment.apiUrl}/hobbies`, {
+    username, hobbies }, httpOptions);
+  }
+
+  getUser(username: string){
+    return this.httpClient.get<User>(`${environment.apiUrl}/${username}`);
+  }
+
+  getAllUsers(){
+    return this.httpClient.get<User[]>(`${environment.apiUrl}/users`);
+  }
+
+  searchUsers(searchUser: string){
+    return this.httpClient.get<User[]>(`${environment.apiUrl}/searchUser/${searchUser}`);
+  }
+
 }

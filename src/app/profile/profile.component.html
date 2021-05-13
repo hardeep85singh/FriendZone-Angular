@@ -1,30 +1,31 @@
 <div class="container" *ngIf="currentUser; else loggedOut">
-    <header >
-      <h5>
-        <strong>{{ currentUser.username }}</strong> profile
-      </h5>
-    </header>  
-    
-  </div>
-  <div class="container" *ngIf="currentUser; else loggedOut">
-      <button type="button" class="btn btn-success" (click)="addHobbies()">Add Hobbies</button>
-      <div class="container">
-          
-          //hobbies
-      </div> 
+  <header>
 
-  </div>
+    <h3>
+      <strong>{{ currentUser.username }}</strong> profile
+    </h3>
 
-  <div class="container" *ngIf="currentUser; else loggedOut">
-    List of Friends
-    <ul class="list-group">
-        <li class="list-group-item">**</li>
-        <li class="list-group-item">**</li>
-        <li class="list-group-item">**</li>
-      </ul>
+  </header>
 
-  </div>
-  
-  <ng-template #loggedOut>
-    Please login.
-  </ng-template>
+</div>
+<div class="container" *ngIf="currentUser; else loggedOut">
+  <h4>My Hobbies</h4>
+  <ul class="list-group">
+    <li class="list-group-item">{{user.hobbies}}</li>
+  </ul>
+
+</div>
+
+<div class="container" *ngIf="currentUser; else loggedOut">
+  <h4>List of Friends</h4>
+  <ul class="list-group">
+    <li class="list-group-item">**</li>
+    <li class="list-group-item">**</li>
+    <li class="list-group-item">**</li>
+  </ul>
+
+</div>
+
+<ng-template #loggedOut>
+  Please login.
+</ng-template>

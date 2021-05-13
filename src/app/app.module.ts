@@ -8,7 +8,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { HobbiesComponent } from './hobbies/hobbies.component';
+import { SearchUserComponent } from './search-user/search-user.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http'
     LoginComponent,
     ProfileComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    HobbiesComponent,
+    SearchUserComponent
   ],
   imports: [
     BrowserModule,
