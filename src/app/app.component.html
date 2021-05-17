@@ -1,17 +1,15 @@
-
-
 <div id="app">
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <a href="#" class="navbar-brand">Friend Zone</a>
     <ul class="navbar-nav mr-auto" routerLinkActive="active" *ngIf="!isLoggedIn">
       <li class="nav-item">
         <a href="/home" class="nav-link" routerLink="home">Home </a>
-      </li>      
+      </li>
     </ul>
     <ul class="navbar-nav mr-auto" routerLinkActive="active" *ngIf="isLoggedIn">
-        <li class="nav-item">
-          <a href="/profile" class="nav-link" routerLink="profile">User Home </a>
-        </li>      
+      <li class="nav-item">
+        <a href="/profile" class="nav-link" routerLink="profile">User Home </a>
+      </li>
     </ul>
 
     <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
@@ -24,31 +22,37 @@
     </ul>
 
     <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
-      
+
     </ul>
 
-    <form class="form-inline my-2 my-lg-0" *ngIf="isLoggedIn">
+    <!-- <form class="form-inline my-2 my-lg-0" *ngIf="isLoggedIn">
       <input class="form-control mr-sm-2" type="text" placeholder="Search Users" aria-label="Search"
       name="search" [(ngModel)]="searchText">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
        (click)="searchUsers()" >Search</button>
-    </form>
+    </form> -->
+
+    <div class="field" *ngIf="isLoggedIn">
+      <!-- <label for="searchUser"></label> -->
+      <input name="searchUser" type="text" id="searchUser" #searchUser placeholder="Search Users" aria-label="Search">
+
+      <button class="btn btn-outline-success my-2 my-sm-0" (click)="searchUsers(searchUser)">Search</button>
+    </div>
+    
     <!-- routerLink="searchUser" -->
     <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
       <li class="nav-item">
         <a href="/hobbies" class="nav-link" routerLink="hobbies">Hobbies</a>
       </li>
-      
+
       <li class="nav-item">
         <a href class="nav-link" (click)="logout()">LogOut</a>
       </li>
     </ul>
-    
+
   </nav>
 
   <div class="container">
     <router-outlet></router-outlet>
   </div>
 </div>
-
-

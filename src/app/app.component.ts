@@ -42,20 +42,31 @@ export class AppComponent implements OnInit {
     window.location.reload();
   }
 
-  async searchUsers() {
-    console.log(this.searchText);
-    const data = await this.authService.searchUsers(this.searchText)
+  // async searchUsers() {
+  //   console.log(this.searchText);
+  //   const data = await this.authService.searchUsers(this.searchText)
+  //   .toPromise();
+  //   this.users = data;
+
+  //   // this.authService.searchUsers(this.searchText).subscribe(
+  //   //   data => {
+  //   //     console.log(data);
+  //   //     this.users = data;
+  //   //   }
+  //   // )
+  //   this.router.navigate([this.returnUrl + "/searchUser"]);
+    
+  // }
+
+  async searchUsers(searchUser: HTMLInputElement) {
+    console.log(searchUser.value);
+
+    const data = await this.authService.searchUsers(searchUser.value)
     .toPromise();
     this.users = data;
 
-    // this.authService.searchUsers(this.searchText).subscribe(
-    //   data => {
-    //     console.log(data);
-    //     this.users = data;
-    //   }
-    // )
     this.router.navigate([this.returnUrl + "/searchUser"]);
-    
+    searchUser.value = '';    
   }
 
   // routeToSearchPage() {

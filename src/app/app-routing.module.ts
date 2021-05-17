@@ -14,6 +14,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'hobbies', component: HobbiesComponent },
   { path: 'searchUser', component: SearchUserComponent },
+  { path: 'searchUser/profile', component: ProfileComponent },
+  { path: 'friends', component: SearchUserComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

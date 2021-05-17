@@ -1,4 +1,4 @@
-<div class="container" *ngIf="currentUser; else loggedOut">
+<div class="p-3 mb-2 bg-light text-dark" *ngIf="currentUser; else loggedOut">
   <header>
 
     <h3>
@@ -8,20 +8,21 @@
   </header>
 
 </div>
-<div class="container" *ngIf="currentUser; else loggedOut">
-  <h4>My Hobbies</h4>
-  <ul class="list-group">
+<div class="p-3 mb-2 bg-primary text-white" *ngIf="currentUser; else loggedOut">
+  <h4 class="text-light">My Hobbies</h4>
+  <p class="text-light">{{user.hobbies}}</p> 
+
+  <!-- <ul class="list-group">
     <li class="list-group-item">{{user.hobbies}}</li>
-  </ul>
+  </ul> -->
 
 </div>
 
-<div class="container" *ngIf="currentUser; else loggedOut">
+<div class="p-3 mb-2 bg-light text-dark" *ngIf="currentUser; else loggedOut">
   <h4>List of Friends</h4>
   <ul class="list-group">
-    <li class="list-group-item">**</li>
-    <li class="list-group-item">**</li>
-    <li class="list-group-item">**</li>
+    <li class="list-group-item" *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</li>
+
   </ul>
 
 </div>

@@ -15,6 +15,7 @@ export class ProfileComponent implements OnInit {
   
   user: User = new User;
   hobbies: string = this.user.hobbies;
+  users : User[] = [];
 
   constructor(
     private tokenStorageService: TokenStorageService,
@@ -22,8 +23,10 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+    console.log(this.tokenStorageService.getUserId());
     this.retreiveHobbies();
+    this.listAllFriends();
+
   }
 
   retreiveHobbies(){
@@ -32,6 +35,15 @@ export class ProfileComponent implements OnInit {
         this.user = response;
         console.log(this.user.hobbies);
         
+      }
+    )
+  }
+
+  listAllFriends(){
+    this.authService.getAllFriends(this.tokenStorageService.getUserId()).subscribe(
+      data => {
+        this.users = data;
+        console.log(this.users);
       }
     )
   }

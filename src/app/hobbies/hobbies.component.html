@@ -1,34 +1,29 @@
 <div class="container" *ngIf="currentUser; else loggedOut">
     <header >
       <h5>
-        <strong>{{ currentUser.username }}</strong> Hobbies
+        <strong>{{ currentUser.username }}</strong> hobbies
       </h5>
     </header>  
     
   </div>
   <div class="container" *ngIf="currentUser; else loggedOut">
-
+    <div class="p-3 mb-2 bg-light text-dark">
+      <p class="text-dark">{{currentUser.hobbies}}</p>     
+    </div>
+    
     <form [formGroup]="form" (ngSubmit)="addHobbies()">
 
-      <!-- *ngIf="!isLoggedIn"  -->
       <div class="form-group">
-          <label for="hobbies">Hobbies</label>
-          <input type="text" class="form-control" formControlName="hobbies" />
-          <!-- <div class="alert alert-danger" role="alert" *ngIf="f.hobbies.errors && submitted">
-              Username is required!
-          </div> -->
+          <input type="text" class="form-control" formControlName="hobbies" 
+          placeholder="{{currentUser.hobbies}}" />
       </div>
       
       <div class="form-group">
           <button class="btn btn-primary btn-block">
-              Add Hobbies!
+              Add/ Edit Hobbies!
           </button>
       </div>
-      <!-- <div class="form-group">
-          <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
-              Login failed: {{ errorMessage }}
-          </div>
-      </div> -->
+      
   </form>
 
 

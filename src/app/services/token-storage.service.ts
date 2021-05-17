@@ -36,5 +36,15 @@ export class TokenStorageService {
     return {};
   }
 
+  public getUserId(): any{
+    const userId = window.sessionStorage.getItem(USER_KEY)?.charAt(6);
+    // console.log(userId);
+    if(userId){
+      return JSON.parse(userId);
+    }
+   
+    return {};
+  }
+
   
 }
