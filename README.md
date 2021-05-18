@@ -28,8 +28,11 @@ Project is created with:
 * Postgres 42.2.18
 
 ## Screenshots
-* Homepage: ![alt-text](https://github.com/hardeep85singh/ToDo/blob/main/screenshots/AddUsers.gif)
+* SignUp Page - Successful: ![alt-text](https://github.com/hardeep85singh/FriendZone-Angular/blob/main/Screenshots/SignupSuccessful.gif)
+* SignUp Page - Failed: ![alt-text](https://github.com/hardeep85singh/FriendZone-Angular/blob/main/Screenshots/SignupFailed.gif)
+* Login & User Profile Page![alt-text](https://github.com/hardeep85singh/FriendZone-Angular/blob/main/Screenshots/LoginAndUserProfile.gif)
 * Redirect to User 1 ToDo page: ![alt-text](https://github.com/hardeep85singh/ToDo/blob/main/screenshots/RedirectToUserToDoPage.gif)
-* User 1 ToDo page: ![alt-text](https://github.com/hardeep85singh/ToDo/blob/main/screenshots/User1ToDoPage.gif) 
-* Redirect to User 2 ToDo page: ![alt-text](https://github.com/hardeep85singh/ToDo/blob/main/screenshots/RedirectToUser2ToDoPage.gif)
-* User 2 ToDo page: ![alt-text](https://github.com/hardeep85singh/ToDo/blob/main/screenshots/User2ToDoPage.gif)
+* Searching and Adding friends: ![alt-text](https://github.com/hardeep85singh/FriendZone-Angular/blob/main/Screenshots/SearchandAddFriends.gif) 
+* Adding Hobbies: ![alt-text](https://github.com/hardeep85singh/FriendZone-Angular/blob/main/Screenshots/AddingHobbies.gif)
+* Editing Hobbies: ![alt-text](https://github.com/hardeep85singh/FriendZone-Angular/blob/main/Screenshots/EditingHobbies.gif)
+* Logging Out: ![alt-text](https://github.com/hardeep85singh/FriendZone-Angular/blob/main/Screenshots/Logout.gif)
