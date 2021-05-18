@@ -42,7 +42,23 @@ export class AppComponent implements OnInit {
     window.location.reload();
   }
 
-  // async searchUsers() {
+  
+  async searchUsers(searchUser: HTMLInputElement) {
+    console.log(searchUser.value);
+
+    const data = await this.authService.searchUsers(searchUser.value)
+    .toPromise();
+    this.users = data;
+
+    this.router.navigate([this.returnUrl + "/searchUser"]);
+    searchUser.value = '';    
+  }
+
+}
+
+
+
+// async searchUsers() {
   //   console.log(this.searchText);
   //   const data = await this.authService.searchUsers(this.searchText)
   //   .toPromise();
@@ -58,16 +74,7 @@ export class AppComponent implements OnInit {
     
   // }
 
-  async searchUsers(searchUser: HTMLInputElement) {
-    console.log(searchUser.value);
 
-    const data = await this.authService.searchUsers(searchUser.value)
-    .toPromise();
-    this.users = data;
-
-    this.router.navigate([this.returnUrl + "/searchUser"]);
-    searchUser.value = '';    
-  }
 
   // routeToSearchPage() {
     // let navigationExtras: NavigationExtras = {
@@ -75,6 +82,3 @@ export class AppComponent implements OnInit {
     // };
     // this.router.navigate([this.returnUrl + "/searchUser"], navigationExtras);
   // }
-
-
-}
