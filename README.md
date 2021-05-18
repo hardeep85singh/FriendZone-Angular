@@ -1,27 +1,35 @@
-# FriendZoneAng
+# FriendZone -Frontend
+A simple social circle prototype for users created with AngularJs, Spring Boot and Postgresql. This application demonstrates the functionality of RestfulAPI and data modellng.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
+## Table of Contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Screenshots](#screenshots)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## General info
+This project sign-ups the user, loging in, user's profile and user's friends. We can also search for users to add as a friend. 
+Angular is used for the front end of the application. SpringBoot is used to build the RESTfull web services and RESTfull Java application. Embeded Apache Tomcat server is used to run the application on the server. Postgresql database is used to store data in tables.
 
-## Code scaffolding
+The basic step wise information is mentioned below.
+* Application homepage is for signup or login the user. 
+* Signup page takes the user details like first and last name, username and password.
+* User can login using his/her credentials.
+* User profile page have tabs for searching friends, adding hobbies and logout.
+* User can add friends by first searching for name and then by adding as a friend.
+* User can add or edit hobbies by clicking the hobbies tab, that will redirect to hobbies page.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tehnologies
+Project is created with:
+* Angular 11
+* JAVA 11
+* SpringBoot 2.4.3
+* Apache Tomcat 8.5.61
+* Postgres 42.2.18
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Screenshots
+* Homepage: ![alt-text](https://github.com/hardeep85singh/ToDo/blob/main/screenshots/AddUsers.gif)
+* Redirect to User 1 ToDo page: ![alt-text](https://github.com/hardeep85singh/ToDo/blob/main/screenshots/RedirectToUserToDoPage.gif)
+* User 1 ToDo page: ![alt-text](https://github.com/hardeep85singh/ToDo/blob/main/screenshots/User1ToDoPage.gif) 
+* Redirect to User 2 ToDo page: ![alt-text](https://github.com/hardeep85singh/ToDo/blob/main/screenshots/RedirectToUser2ToDoPage.gif)
+* User 2 ToDo page: ![alt-text](https://github.com/hardeep85singh/ToDo/blob/main/screenshots/User2ToDoPage.gif)
